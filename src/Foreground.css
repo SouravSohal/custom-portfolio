@@ -1,0 +1,400 @@
+.foreground {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  z-index: 1;
+}
+
+.card {
+  background-color: #151030;
+  width: 60%;
+  height: 70%;
+  transform: rotateY(15deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Adjust border radius */
+}
+
+.animated-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: animate 20s linear infinite;
+}
+
+.shape1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 10%;
+}
+
+.shape2 {
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  left: 70%;
+}
+
+.shape3 {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 30%;
+}
+
+.shape4 {
+  width: 50px;
+  height: 50px;
+  top: 70%;
+  left: 70%;
+}
+
+.shape5 {
+  width: 60px;
+  height: 60px;
+  top: 80%;
+  left: 40%;
+}
+
+.shape6 {
+  width: 110px;
+  height: 110px;
+  top: 20%;
+  left: 80%;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(100%, 100%) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+.starry-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.5;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.normal-text {
+  color: white; /* Alternative to white */
+}
+
+.highlighted-text {
+  color: #00f6ff;
+}
+
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.typing-text .cursor {
+  display: inline-block;
+  width: 0.15em;
+  height: 100%;
+  background-color: #915EFF;
+  animation: blink-caret 0.75s step-end infinite;
+  position: absolute;
+  right: -0.1em;
+  top: 0;
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 1 }
+  50% { opacity: 0 }
+}
+
+.sidebar {
+  position: absolute;
+  right: 0;
+  height: 70%;
+  width: 0;
+  background-color: #151030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 0px 0px 10px;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.sidebar.open {
+  width: 15%;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.sidebar nav ul li:hover {
+  color: #915EFF;
+}
+
+.hamburger-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: none;
+  z-index: 100; /* Ensure a high z-index */
+}
+
+.hamburger-icon:hover {
+  opacity: 0.7; /* Optional: Add hover effect */
+}
+
+.ball {
+  width: 30px;
+  height: 30px;
+  background-color: #915EFF;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  z-index: 1; /* Ensure it appears on top of other elements */
+}
+
+
+.typing-text:last-child .cursor {
+  display: inline-block;
+  width: 0.15em;
+  height: 100%;
+  background-color: #915EFF; /* Blinking cursor color */
+  animation: blink-caret 0.75s step-end infinite;
+  position: absolute;
+  right: -0.1em;
+  top: 0;
+}
+
+.about-content {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  font-size: 2.5em; /* Adjust font size as needed */
+  color: white;
+}
+
+.typing-text:last-child .cursor {
+  display: inline-block;
+  width: 0.15em;
+  height: 100%;
+  background-color: #915EFF; /* Blinking cursor color */
+  animation: blink-caret 0.75s step-end infinite;
+  position: absolute;
+  right: -0.1em;
+  top: 0;
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 1 }
+  50% { opacity: 0 }
+}
+
+.home-content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.Home-textdiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 40%;
+  height: 100%;
+  font-weight: 700;
+}
+
+.Home-imgdiv{
+  width: 40%;
+  height: 100%;
+}
+
+.subheading-one{
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.paragraph-one{
+  text-align: left;
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 20px;
+  color: black;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+/* MenuButton.css */
+.menu-container {
+  position: relative;
+}
+
+.button-menu {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  background-color: #ffdd00;
+  border: 2px solid #1e1e1e;
+  color: #1e1e1e;
+  font-size: 30px;
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 3px 10px 0px rgba(16, 16, 16, 0.5);
+  transition: all 0.3s;
+}
+
+.checkbox {
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+}
+
+.option {
+  position: absolute;
+  background-color: #1e1e1e;
+  border: 2px solid #ffdd00;
+  color: #ffdd00;
+  z-index: -1;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s;
+  box-shadow: 3px 3px 10px 0px rgba(16, 16, 16, 0.5);
+}
+
+.checkbox:hover ~ .button-menu,
+.checkbox:checked ~ .button-menu {
+  background-color: #eccd00;
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.button-menu::before {
+  content: attr(data-content);
+}
+
+.button-menu.checked {
+  background-color: #eccd00;
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.option.checked {
+  box-shadow: none;
+}
+
+.option:hover,
+.option:active,
+.option:focus {
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+.option-a.checked {
+  transition-delay: 0.1s;
+  transform: translateY(-90px);
+}
+
+.option-b.checked {
+  transition-delay: 0.2s;
+  transform: translateY(-65px) translateX(65px);
+}
+
+.option-c.checked {
+  transition-delay: 0.3s;
+  transform: translateX(90px);
+}
+
